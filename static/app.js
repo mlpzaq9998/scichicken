@@ -1,6 +1,6 @@
 const appData = {
   autoRefresh: true,
-  refreshInterval: 1000,
+  refreshInterval: 15,
   gsTime: 0,
   me: [-1, -1, 0, 0],
   meGuid: -1,
@@ -26,19 +26,19 @@ vapp = new Vue({
     mapType: 'erangel',
     followMe: true,
     isDesert: false,
-    showBox: false,
+    showBox: true,
     showAirDrop: true,
     showCar: true,
 
     showItemTop: true,
     showItemDuoDuo: true,
     showItemBasic: true,
-    showItemAR: false,
+    showItemAR: true,
     showItemSR: false,
-    showItemHealth: false,
+    showItemHealth: true,
     showItemThrow: false,
     showItemAmmo: false,
-    showItemAll: false,
+    showItemAll: true,
 
     coordinate: '',
     toggleButtonText: '停止刷新'
@@ -95,7 +95,7 @@ vapp = new Vue({
       }
     },
     setFPS (fps) {
-      appData.refreshInterval = Math.floor(1000 / fps)
+      appData.refreshInterval = Math.floor(15 / fps)
     },
     showNoItems () {
       this.showItemAll = this.showItemDuoDuo = this.showItemTop = this.showItemBasic = this.showItemAR = this.showItemSR = this.showItemHealth = this.showItemThrow = this.showItemAmmo = this.showItemAll = false
