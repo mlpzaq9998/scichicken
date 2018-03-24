@@ -42,7 +42,7 @@ function main () {
     }
     const c = new Cap()
     const device = args[1]
-    const filter = `(src host ${args[2]} and udp dst portrange 7000-7999) or (dst host ${args[2]} and udp src portrange 7000-7999)`
+    const filter = `(udp dst portrange 7000-7999) or (udp src portrange 7000-7999)`
     const bufSize = 10 * 1024 * 1024
     const capBuffer = Buffer.alloc(65535)
     const linkType = c.open(device, filter, bufSize, capBuffer)
